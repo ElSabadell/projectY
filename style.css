@@ -1,21 +1,118 @@
-.container-home {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    height: 100vh;
-    background-color: white;
-    z-index: -1;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,500;0,900;1,100;1,200&display=swap');
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.container-about {
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.content {
+    padding: 20px;
+    font-size: 18px;
+}
+
+.navigation {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 200;
+    clip-path: circle(25px at calc(100% - 45px) 45px);
+    transition: all 500ms ease-in-out;
+}
+
+.navigation.active {
+    clip-path: circle(75%);
+}
+
+.navigation .ham-btn {
     position: absolute;
-    top: 150%;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.navigation .ham-btn span {
+    position: absolute;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    height: 100vh;
-    background-color: white;
-    z-index: -1;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 2px;
+    background: #000;
+    transition: all 200ms ease-in-out;
+}
+
+.navigation .ham-btn span:nth-child(1) {
+    top: 30%;
+}
+
+.navigation .ham-btn span:nth-child(2) {
+    top: 50%;
+}
+
+.navigation .ham-btn span:nth-child(3) {
+    top: 70%;
+}
+
+.navigation.active .ham-btn span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.navigation.active .ham-btn span:nth-child(2) {
+    display: none;
+}
+
+.navigation.active .ham-btn span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.navigation .links {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    text-align: right;
+}
+
+.navigation .links a {
+    position: relative;
+    display: inline-block;
+    margin: 20px 0px;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.navigation .links .a-link:after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -5px;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+    transition: all 300ms ease-in-out;
+}
+
+.navigation .links .a-link:hover:after {
+    width: 100%;
 }
 
 #navbar {
@@ -28,17 +125,261 @@
     transition: all 0.4s linear;
 }
 
-#links {
-    transition: all 0.4s linear;
+#navigation.scrolled {
+    position: fixed;
+    top: -15px;
+    background-color: white;
 }
 
-.nav-home{
-    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+nav {
+    background-color: white !important;
+}
+
+/* NAVBAR END */
+
+/* ========================================== */
+
+.container-home {
+    background-image: url("/bg2.jpg");
+    /* Parallax Effect */
+    height: 80vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 1s linear;
+}
+
+.container-home.scrolled {
+    background-image: url("/bg2-blur.jpg");
+}
+
+.card-home {
+    font-family: 'Raleway', sans-serif;
+    position: absolute;
+    top: 75%;
+    /* left: 20%;
+    transform: translateX(-50%) translateY(-50%); */
     border-radius: 10px;
-    color: white !important;
-    text-shadow: 4px 4px 6px rgba(139,139,139,0.6);
+    /* box-shadow: 0px -16px 51px -2px rgba(0, 0, 0, 0.75); */
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.247);
     transition: all .3s linear;
 }
-.nav-home:hover{
-    transform: scale(1.2);
+
+.card-event {
+    border-radius: 10px;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.247);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    transition: all .3s linear;
+}
+
+.card-img-top {
+    border-radius: 10px;
+}
+
+#btn-up {
+    text-align: right;
+    background-color: white;
+    width: 40px;
+    border-radius: 50px;
+    transform: scale(0);
+    transition: all .3s linear;
+}
+
+#btn-up.scrolled {
+    transform: scale(1);
+    width: 40px;
+    background-color: white;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.247);
+}
+
+.btn-up, .fixed-bottom {
+    left: 10px;
+    bottom: 10px !important;
+}
+
+.container-event {
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    min-height: 100vh;
+    background-color: white !important;
+    z-index: -1;
+}
+
+.card-menu-social {
+    border: 1px solid white;
+}
+
+.fa-instagram, .fa-facebook-f, .fa-twitter {
+    transition: all .3s linear;
+}
+
+.fa-instagram:hover {
+    color: #e1306c !important;
+}
+
+.fa-facebook-f:hover {
+    color: #3b5998 !important;
+}
+
+.fa-twitter:hover {
+    color: #00acee !important;
+}
+
+.card-home:hover, .card-event:hover {
+    transform: scale(1.01);
+}
+
+.container-ad {
+    position: absolute;
+    top: 230%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    height: 40vh;
+    background-color: white !important;
+    z-index: -1;
+}
+
+.card-ad {
+    border-radius: 10px;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.247);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    transition: all .3s linear;
+    text-align: center;
+}
+
+footer {
+    color: black;
+    padding-top: 105vh !important;
+    text-align: center;
+}
+
+footer, h4, .p-footer {
+    font-size: 80% !important;
+    line-height: 5px;
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+    transition: all .3s linear !important;
+}
+
+body::-webkit-scrollbar {
+    width: 2px;
+    background-color: #F5F5F5;
+    transition: all .3s linear !important;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #777;
+    transition: all .3s linear !important;
+}
+
+.btn-visit {
+    color: rgb(0, 89, 255);
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.247);
+    border-radius: 50px;
+    transition: all .3s linear;
+}
+
+.btn-visit:hover {
+    transform: scale(1.02);
+    color: blue;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background: linear-gradient(45deg, #30CFD0 0%, #330867 100%);
+    overflow: hidden;
+    width: 100%;
+    border-radius: 10px;
+    height: 0;
+    transition: .5s ease;
+}
+
+.card-body-event:hover .overlay {
+    bottom: 0;
+    height: 100%;
+}
+
+.title-event {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    text-align: center;
+    background-color: white !important;
+    border-radius: 50px;
+    margin: 15px;
+}
+
+.span-event {
+    background: linear-gradient(45deg, #30CFD0 0%, #330867 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.p-event {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    border-radius: 50px;
+    margin: 15px;
+}
+
+.btn-event {
+    background-color: white;
+    color: rgb(56, 56, 255);
+    border-radius: 50px;
+    width: 40px;
+    height: 30px !important;
+    transition: all 80ms linear;
+}
+
+.btn-img-event {
+    display: none;
+}
+
+.fa-plus {
+    float: right !important;
+    color: rgb(56, 56, 255) !important;
+}
+
+
+.btn-event:hover {
+    width: 100px;
+    height: 30px !important;
+}
+
+.btn-event:hover > .btn-img-event {
+    display: inline-block;
+    float: left !important;
+}
+.btn-event:hover > .fa-plus{
+    display: inline-block;
+}
+
+.btn-src{
+    background-color: white;
+    border-radius: 50px;
+    transform: scale(0);
+    transition: all .3s linear;
+}
+
+.btn-src.scrolled {
+    transform: scale(1);
+    width: 40px;
+    background-color: white;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.247);
 }

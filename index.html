@@ -2,56 +2,109 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>projectY | HOME</title>
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/screen.css">
 </head>
 
 <body>
-    <nav id="navbar" class="navbar navbar-expand-md bg-light navbar-light fixed-top">
-        <a id="logo" class="navbar-brand" href="#"><img src="/MAS-Logo.png" width="80px" alt=""></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav ml-auto" id="links">
-            <li class="nav-item">
-              <a class="nav-link nav-home" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>    
-          </ul>
-        </div>  
-      </nav>
+
+
+  <nav id="navbar" class="navbar navbar-expand-md fixed-top">
+    <a id="logo" class="navbar-brand" href="#"><img src="/logo.png" width="80px" alt=""></a>
+    <div id="navigation" class="navigation">
+      <div class="ham-btn" onclick="showNav()">
+        <span></span><br>
+        <span></span>
+      </div>
+      <div class="links">
+        <div class="link">
+          <a class="a-link" href="#home" onclick="hideNav()">HOME</a>
+        </div>
+        <div class="link">
+          <a class="a-link" href="#event" onclick="hideNav()">EVENTI</a>
+        </div>
+        <!-- <div class="link">
+          <a class="a-link" href="#footer" onclick="hideNav()">Contatti</a>
+        </div> -->
+        <hr><br>
+        <div class="card card-menu-social" style="display: inline-block;">
+          <a class="fab fa-instagram" href="https://instagram.com/elsabadell.x"></a>&nbsp;&nbsp;&nbsp;
+          <a class="fab fa-facebook-f" href="https://facebook.com/"></a>&nbsp;&nbsp;&nbsp;
+          <a class="fab fa-twitter" href="https://twitter.com"></a>&nbsp;&nbsp;&nbsp;
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <a id="btn-up" href="#home" class="fas fa-arrow-up fixed-bottom btn-up btn"></a>
+  <div id="home" class="container-fluid container-home">
+    <div class="card card-home">
+      <div class="card-body">
+        <h1 class="h1-home" style="font-weight: 900; font-size: 250%; background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;">UNPLI CUNEO</h1>
+      </div>
+    </div>
+  </div>
+  <div id="event" class="container-fluid container-event d-flex justify-content-center align-items-center">
+    <div class="row">
+      <div class="col" style="padding-top: 20px;">
+        <div class="card card-event" style="width: 15rem;">
+          <div class="card-body card-body-event">
+            <img src="/bagna.jpg" alt="Avatar" style="width: 100%;" class="image">
+            <div class="overlay">
+              <div class="title-event"><span class="span-event">bagna caöda</span></div>
+              <p class="p-event">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic dicta, placeat velit, vel
+                sunt omnis amet impedit accusantium ea cumque beatae veritatis doloremque nostrum ipsum porro officiis
+                eos eveniet ut!</p>
+              <div class="row">
+                <div class="col text-center">
+                  <a href="#" class="btn btn-event" style="height: 40px;" >
+                    <img class="btn-img-event" src="/btn-event.PNG">
+                    <i class="fas fa-plus text-right" style="text-align: right !important;"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a id="btn-src" href="" class="fas fa-search btn fixed-bottom" style="width: 30px; padding-bottom: 50px;"></a>
+    </div>
     
-    <div class="container-fluid container-home">
 
-    </div>
-    <div class="container-fluid container-about">
+    
+    
+  </div>
+  <!-- <footer id="footer">
+    <h4>© Tutti i Diritti Riservati.</h4>
+    <p class="p-footer">powered by <a href="http://mashome.space/">MAS</a></p>
+  </footer> -->
 
-    </div>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-
-    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1cQRFi3dgfSVKpc1B9idTEuN3cBScszNHP9silYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1cQRFi3dgfSVKpc1B9idTEuN3cBScszNHP9silYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/c36461f082.js" crossorigin="anonymous"></script>
 </body>
 <script src="/script.js"></script>
 
